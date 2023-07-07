@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEST FOCUSIN FOCUS OUT</title>
+</head>
+
+<body>
+  <div style="text-align: center;">
+    <button id="btn">SET EVENTS</button>
+  </div>
+</body>
+
+<script>
+  const focusInEvent = () => {
+    window.addEventListener('focusin', action);
+  }
+
+  const focusOutEvent = () => {
+    window.addEventListener('focusout', focusInEvent);
+  }
+
+  const removeEvents = () => {
+    window.removeEventListener('focusout', focusInEvent);
+    window.removeEventListener('focusin', action);
+  }
+
+  const action = () => {
+    alert('BHAI M PAYMENT KARKE AA GAYA');
+    removeEvents();
+  }
+
+  document.getElementById('btn').addEventListener("click", focusOutEvent)
+</script>
+
+</html>
