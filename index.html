@@ -4,27 +4,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TEST FOCUSIN FOCUS OUT</title>
+  <title>Document</title>
 </head>
 
 <body>
   <div style="text-align: center;">
-    <button id="btn">SET EVENTS</button>
+    <button id="btn">CLICK ME</button>
   </div>
 </body>
 
 <script>
   const focusInEvent = () => {
-    window.addEventListener('focusin', action);
+    window.addEventListener('focus', action);
   }
 
   const focusOutEvent = () => {
-    window.addEventListener('focusout', focusInEvent);
+    window.addEventListener('blur', focusInEvent);
   }
 
   const removeEvents = () => {
-    window.removeEventListener('focusout', focusInEvent);
-    window.removeEventListener('focusin', action);
+    window.removeEventListener('blur', focusInEvent);
+    window.removeEventListener('focus', action);
   }
 
   const action = () => {
